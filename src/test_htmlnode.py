@@ -4,6 +4,7 @@ from htmlnode import ParentNode
 
 def main():
 
+
     test1 = HTMLNode()
     test2 = HTMLNode("p","Some text",[],{"href": "https://www.google.com", "target": "_blank"})
 
@@ -22,6 +23,25 @@ def main():
     test14 = ParentNode("html",[test13],)
     test15 = test14.to_html()
 
+    #test16 = ParentNode("p",[],)
+
+    #print (test16.to_html())
+
     print(test15)
+
+    node = ParentNode(
+        "p",
+        [
+            LeafNode("b", "Bold text"),
+            LeafNode(None, "Normal text"),
+            LeafNode("i", "italic text"),
+            LeafNode(None, "Normal text"),
+        ],
+    )
+
+
+    print(node.to_html())
+
+    
 
 main()

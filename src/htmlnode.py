@@ -37,7 +37,7 @@ class ParentNode(HTMLNode):
     def to_html(self):
         if self.tag is None:
             raise ValueError("Tag cannot be None in parent node.")
-        elif self.children is None:
+        elif self.children is None or not self.children:
             raise ValueError("Children cannot be None in a parent node")
         else:
             line = ""
